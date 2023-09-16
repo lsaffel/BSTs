@@ -34,17 +34,18 @@ def levelOrder(root):
     # prints the nodes of the tree in breadth-first order, i.e. each level
     q = []      # an empty queue, represented by a list
     print("The root node's value is: ", root.val)
+    valuesList = []
 
     q.append(root)
     print("The queue's first element is now: ", q[0].val)
 
-    # while not q:        # while the q is not empty
-    #     print(q[0].val)  # print the first element in the queue's value
-    #     q.pop(0)
+    currentElement = q.pop(0)
 
-    q.pop(0)
+    valuesList.append(currentElement.val)
 
+    print("The list of node values is now: ", valuesList)
     print("The queue is now: ", q)
+
     # -------------------------------------------------------------------
 
 
