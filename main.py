@@ -8,25 +8,25 @@ class TreeNode:
         self.right = right
 
 
-class Solution:
-    def insertIntoBST(self, root: TreeNode, val: int) -> TreeNode:
+class BinarySearchTree:
+    def insertIntoBST(self: TreeNode, val: int) -> TreeNode:
         new_node = TreeNode(val)
-        if root is None:
+        if self is None:
             root = new_node
             return root
 
-        if val < root.val:
-            if root.left is None:
-                root.left = new_node
+        if val < self.val:
+            if self.left is None:
+                self.left = new_node
             else:
-                self.insertIntoBST(root.left, val)
+                self.insertIntoBST(self.left, val)
         else:       # val > root.val
-            if root.right is None:
-                root.right = new_node
+            if self.right is None:
+                self.right = new_node
             else:
-                self.insertIntoBST(root.right, val)
+                self.insertIntoBST(self.right, val)
 
-        return root
+        return self
 # ---------------------------------------------------------------
 
 
@@ -53,5 +53,5 @@ if __name__ == '__main__':
     myTree = TreeNode(17)
     print(myTree.val)
     levelOrder(myTree)     # prints the nodes of the tree in breadth-first order, i.e. each level
-
-
+    BinarySearchTree.insertIntoBST(myTree, 18)
+    print(myTree.right.val)
